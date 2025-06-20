@@ -1,5 +1,5 @@
 package com.nt.config;
-
+/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+//@Configuration
 public class SecurityConfiguration {
 
     @Bean
@@ -51,4 +51,4 @@ public class SecurityConfiguration {
     public  PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-}
+}*/

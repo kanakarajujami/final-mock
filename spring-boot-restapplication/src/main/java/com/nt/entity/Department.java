@@ -11,14 +11,30 @@ import java.util.Set;
 @Table(name="department")
 @Setter
 @Getter
+//@AllArgsConstructor
 @RequiredArgsConstructor
+//@NoArgsConstructor(force = true)
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String location;
+    private   Long id;
+    private  String name;
+    private  String location;
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Employee> employees=new HashSet<>();
+
+
+    public Department(Long id, String location, String name) {
+        this.id = id;
+        this.location = location;
+        this.name = name;
+    }
+
+    public Department(String location, String name) {
+        this.location = location;
+        this.name = name;
+    }
+
+
 }
