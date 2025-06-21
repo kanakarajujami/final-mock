@@ -32,6 +32,8 @@ public class EmployeeServiceImpl implements  IEmployeeService{
         Department department = departmentRepo.findById(departmentId).orElseThrow(() ->
                 new NoResourceFoundException("department", "id", departmentId));
 
+        System.out.println("employee from service branch");
+
         //convert employee dto to entity
         Employee employee = mapToEntity(employeeDto);
 
