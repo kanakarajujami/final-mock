@@ -29,6 +29,7 @@ public class DepartmentServiceImpl implements IDepartmentService{
     @Override
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
 
+        System.out.println("create department from cards");
         Department savedDepartment =departmentRepo.save(mapToEntity(departmentDto));
         return mapToDto(savedDepartment);
     }
