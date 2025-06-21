@@ -53,7 +53,12 @@ public class DepartmentServiceImpl implements IDepartmentService{
 
         Department department = departmentRepo.findById(departmentId).orElseThrow(() ->
                                new NoResourceFoundException("department", "id", departmentId));
+        System.out.println("This is from loans branch ");
+        System.out.println("This is from loans branch ");
+        System.out.println("This is from loans branch ");
         return mapToDto(department);
+
+
     }
 
     @Override
