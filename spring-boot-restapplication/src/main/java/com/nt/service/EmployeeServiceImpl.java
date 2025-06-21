@@ -51,7 +51,7 @@ public class EmployeeServiceImpl implements  IEmployeeService{
 
         List<EmployeeDto> list = department.getEmployees().stream().map(EmployeeUtil::mapToDto).toList();
 
-        System.out.println("All Entities converted to dtos");
+        System.out.println("Service class");
 
         for(EmployeeDto employeeDto:list){
             employeeDto.setDepartmentId(department.getId());
