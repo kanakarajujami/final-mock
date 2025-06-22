@@ -55,6 +55,8 @@ public class DepartmentServiceImpl implements IDepartmentService{
     @Override
     public DepartmentDto findDepartmentById(Long departmentId) {
 
+
+        System.out.println("findAll department id form service");
         Department department = departmentRepo.findById(departmentId).orElseThrow(() ->
                                new NoResourceFoundException("department", "id", departmentId));
         return mapToDto(department);
