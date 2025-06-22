@@ -40,6 +40,7 @@ public class DepartmentServiceImpl implements IDepartmentService{
     public DepartmentResponse getAllDepartments(Pageable pageable) {
         Page<Department> all = departmentRepo.findAll(pageable);
 
+        System.out.println("Get all departments");
         DepartmentResponse departmentResponse=new DepartmentResponse();
         departmentResponse.setDepartmentDtoList(all.stream().map(DepartmentUtil::mapToDto).toList());
         departmentResponse.setPageNo(all.getNumber());
