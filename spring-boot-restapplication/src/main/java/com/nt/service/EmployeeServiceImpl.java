@@ -8,6 +8,7 @@ import com.nt.repository.DepartmentRepository;
 import com.nt.repository.EmployeeRepository;
 import static  com.nt.util.EmployeeUtil.*;
 
+
 import com.nt.util.EmployeeUtil;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,8 @@ public class EmployeeServiceImpl implements  IEmployeeService{
 
         Department department = departmentRepo.findById(departmentId).orElseThrow(() ->
                 new NoResourceFoundException("department", "id", departmentId));
+        System.out.println("create employee from user2 from cards1");
+        System.out.println("create employee from user2 from cards2");
 
         System.out.println("employee from service branch");
 
@@ -53,13 +56,13 @@ public class EmployeeServiceImpl implements  IEmployeeService{
 
         List<EmployeeDto> list = department.getEmployees().stream().map(EmployeeUtil::mapToDto).toList();
 
-        System.out.println("Service class");
-        System.out.println("Service class2");
-        System.out.println("Service class3");
+        System.out.println("All Entities converted to dtos");
+        System.out.println("This is from cards branch");
 
         for(EmployeeDto employeeDto:list){
             employeeDto.setDepartmentId(department.getId());
         }
+
         return list;
     }
 }
