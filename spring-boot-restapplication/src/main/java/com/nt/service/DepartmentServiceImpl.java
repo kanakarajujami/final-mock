@@ -29,6 +29,9 @@ public class DepartmentServiceImpl implements IDepartmentService{
     @Override
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
 
+
+        System.out.println("From service branch createDepartment()");
+        System.out.println("From service branch createDepartment()");
         Department savedDepartment =departmentRepo.save(mapToEntity(departmentDto));
         return mapToDto(savedDepartment);
     }
