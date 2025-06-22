@@ -46,6 +46,9 @@ public class EmployeeServiceImpl implements  IEmployeeService{
         //set department to employee
         employee.setDepartment(department);
 
+
+        System.out.println("===========================");
+        System.out.println("=======================");
         Employee saveEmployee = employeeRepo.save(employee);
         EmployeeDto employeeDto1 = mapToDto(saveEmployee);
         employeeDto1.setDepartmentId(department.getId());
