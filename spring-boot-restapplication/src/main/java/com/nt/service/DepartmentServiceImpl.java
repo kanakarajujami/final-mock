@@ -30,8 +30,10 @@ public class DepartmentServiceImpl implements IDepartmentService{
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
 
 
+
         System.out.println("From service branch createDepartment()");
         System.out.println("From service branch createDepartment()");
+        System.out.println("create department fro
         Department savedDepartment =departmentRepo.save(mapToEntity(departmentDto));
         return mapToDto(savedDepartment);
     }
@@ -57,7 +59,12 @@ public class DepartmentServiceImpl implements IDepartmentService{
 
         Department department = departmentRepo.findById(departmentId).orElseThrow(() ->
                                new NoResourceFoundException("department", "id", departmentId));
+        System.out.println("This is from loans branch ");
+        System.out.println("This is from loans branch ");
+        System.out.println("This is from loans branch ");
         return mapToDto(department);
+
+
     }
 
     @Override
