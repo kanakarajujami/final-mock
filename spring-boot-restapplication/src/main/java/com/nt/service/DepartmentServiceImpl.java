@@ -29,7 +29,11 @@ public class DepartmentServiceImpl implements IDepartmentService{
     @Override
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
 
-        System.out.println("create department from cards");
+
+
+        System.out.println("From service branch createDepartment()");
+        System.out.println("From service branch createDepartment()");
+        System.out.println("create department fro
         Department savedDepartment =departmentRepo.save(mapToEntity(departmentDto));
         return mapToDto(savedDepartment);
     }
@@ -38,6 +42,7 @@ public class DepartmentServiceImpl implements IDepartmentService{
     public DepartmentResponse getAllDepartments(Pageable pageable) {
         Page<Department> all = departmentRepo.findAll(pageable);
 
+        System.out.println("Get all departments");
         DepartmentResponse departmentResponse=new DepartmentResponse();
         departmentResponse.setDepartmentDtoList(all.stream().map(DepartmentUtil::mapToDto).toList());
         departmentResponse.setPageNo(all.getNumber());
